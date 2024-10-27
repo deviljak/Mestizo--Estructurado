@@ -1,0 +1,138 @@
+/*HERO*/
+.hero {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner {
+    width: 70vw;
+}
+
+/*SOBRE MI*/
+.sobre-mi {
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    gap: 5vw;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.sobre-mi-flecha {
+    position: absolute; /* Cambia la posición para que sea relativa al contenedor */
+    transition: transform 0.3s ease; /* Para suavizar el movimiento */
+    transform-origin: top right; /* Cambia el origen de la transformación a la esquina superior derecha */
+    margin: 0; /* Sin margen */
+    left: 20%; /* Ajusta la posición horizontal */
+    top: 15%; /* Ajusta la posición vertical según sea necesario */
+    transform-origin: center;
+}
+
+.sobre-mi-flecha>img {
+    transform: rotate(225deg);
+    width: 6vw;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 75%;
+}
+
+.accordion__item {
+    overflow: hidden;
+}
+
+.accordion__header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5vw 0;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-negro);
+    border-width: 0 0 2px 0;
+}
+
+.accordion__item .accordion__content {
+    margin: 0.5vw 0 0 0;
+    padding: 0;
+    max-height: 0;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.accordion-mas {
+    content: '';
+    display: block;
+    width: 0.6vw;
+    height: 2px;
+    background-color: var(--color-negro);
+}
+
+.accordion-mas-girar {
+    content: '';
+    display: block;
+    width: 0.6vw;
+    height: 2px;
+    background-color: var(--color-negro);
+    transform-origin: center;
+    transform: rotate(90deg);
+    transition: all 0.3s ease;
+}
+
+.accordion__header.active .accordion-mas-girar {
+   transform: rotate(0deg);
+}
+
+/*Marquee*/ 
+.marquee {
+    overflow: hidden;
+    display: flex;
+  }
+
+.marquee-right {
+margin: 1vw 0;
+}
+
+.marquee h1{
+font-size: 4vw;
+font-weight: 400;
+width: auto;
+line-height: 6vw;
+white-space: nowrap;
+text-transform: uppercase
+}
+
+.marquee-regular {
+border: 2px solid black;
+background-color: #ffe500;
+border-radius: 150px;
+margin: 0 1vw;
+padding: 0 1vw;
+
+}
+
+.marquee-destacado {
+border: 2px solid black;
+color: white;
+background-color: #000000;
+border-radius: 150px;
+margin: 0 1vw;
+padding: 0 1vw;
+}
+
+/*Portfolio*/
+.portfolio {
+    flex-direction: row;
+    gap: 2.5vw;
+}
+
+.imagen-portfolio {
+    width: 100%;
+}
