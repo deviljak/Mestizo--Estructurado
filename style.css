@@ -138,6 +138,14 @@ a {
     justify-content: space-between;
 }
 
+.movil {
+    display: none;
+}
+
+.escritorio {
+    display: flex;
+}
+
 /*CABECERA*/
 .cabecera {
     display: flex;
@@ -341,7 +349,7 @@ input:-webkit-autofill {
 
 .entradas {
     height: 50px;
-    width: 50%;
+    width: 100%;
     border-width: 0;
     font-family: poppins;
     background-color: var(--color-blaco-hueso);
@@ -456,4 +464,98 @@ textarea {
 .slide-in.active {
     opacity: 1; /* Se vuelve visible al activar */
     transform: translateY(0); /* Regresa a la posición original */
+}
+
+
+/*Medas query*/
+@media (max-width: 500px) {
+    h1 {
+        font-size: 8vw;
+        line-height: 9vw;
+        width: 90vw;
+    }
+
+    h2 {
+        font-size: 7vw;
+        line-height: 8vw;
+    }
+
+    h3 {
+        font-size: 6vw;
+        line-height: 7vw;
+    }
+
+    h4 {
+        font-size: 6vw;
+        line-height: 6vw;
+    }
+
+    p {
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+
+    .parrafo {
+        width: 100%;
+    }
+
+    .movil {
+        display: block;
+    }
+
+    .escritorio {
+        display: none;
+    }
+
+    .contenedor {
+        width: 90vw;
+    }
+
+        .row {
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .columna {
+            flex-direction: ;
+        }
+
+    .cabecera-menu-boton {
+        align-items: center;
+    }    
+
+    .cabecera-menu-boton>p {
+        font-size: 4vw;
+    }    
+
+    .cabecera-menu-boton:hover {
+        gap: 1vh;
+    }
+
+    .barra-separadora {
+        width: 90vw;
+    }
+
+    .contenedor-scroll {
+        display: none;
+    }
+
+    .entradas {
+        border-radius: 0;
+        font-size: 3vw;
+        padding: 5%;
+    }
+
+    .contactame-div {
+        flex-direction: column;
+    }
+
+    .boton-contacto {
+        font-size: 3vw;
+    }
+
+    .social {
+        justify-content: space-between;
+    }
+
 }

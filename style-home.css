@@ -136,3 +136,42 @@ padding: 0 1vw;
 .imagen-portfolio {
     width: 100%;
 }
+
+/*Medias query*/
+@media (max-width: 500px) {
+    .banner {
+        width: 90vw;
+    }
+
+    .sobre-mi {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .sobre-mi-flecha {
+        top: 5%;
+        left: 75%;
+    }
+
+    .sobre-mi-flecha>img {
+        width: 15vw;
+    }
+
+    .accordion {
+        width: 100%;
+    }
+
+    .accordion-mas, .accordion-mas-girar {
+        width: 5vw;
+    }
+
+    .marquee>h1 {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .portfolio {
+        flex-direction: column;
+    }
+
+}
