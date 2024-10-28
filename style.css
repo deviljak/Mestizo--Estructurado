@@ -98,6 +98,7 @@ a {
     }
 
     .row {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
@@ -140,7 +141,7 @@ a {
 }
 
 .movil {
-    display: none;
+    display: none!important;
 }
 
 .escritorio {
@@ -287,8 +288,22 @@ a {
     overflow: hidden;
 }
 
+.contenido-offcanvas {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.menu-offcanvas>div {
+    gap: 2vw;
+}
+
 .cerrar-boton {
     display: flex;
+    margin: auto 0;
+    height: 1px;
     justify-content: center;
     align-items: center;
     gap: 1vw;
@@ -563,7 +578,7 @@ textarea {
     }
 
     .movil {
-        display: block;
+        display: flex!important;
     }
 
     .escritorio {
@@ -597,6 +612,74 @@ textarea {
         gap: 1vh;
     }
 
+    .menu-offcanvas {
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 5vh;
+        position: fixed;
+
+    }
+
+    .menu-offcanvas.menu-offcanvas-activo {
+        position: absolute;
+        top: 80vw;
+        gap: 7vh;
+        height: 60vh;
+        overflow: hidden;
+    }
+
+    .menu-offcanvas>div {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 2vw;
+    }
+
+    .contenido-offcanvas {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .cerrar-boton:hover {
+        background-color: var(--color-blanco);
+        color: var(--color-negro);
+    }
+    
+    .cerrar-boton {
+        margin: 0;
+    }
+    
+    
+    .cerrar-boton>p {
+        font-size: 5vw;
+        line-height: 5vw;
+    }
+    
+    
+    .cerrar-boton-linea {
+        content: '';
+        display: block;
+        background-color: var(--color-negro);
+        width: 7vw;
+        height: 1px;
+        transition: all 0.3s ease;
+    }
+    
+    .cerrar-boton-linea.uno {
+        height: 2px;
+        background-color: var(--color-negro);
+        transform: translateY(1px) rotate(-45deg);
+        transform-origin: center;
+    }
+    .cerrar-boton-linea.dos {
+        height: 2px;
+        background-color: var(--color-negro);
+        transform: translateY(-1px) rotate(45deg);
+        transform-origin: center;
+    }
+    
+
     .barra-separadora {
         width: 90vw;
     }
@@ -621,6 +704,18 @@ textarea {
 
     .social {
         justify-content: space-between;
+        margin: 0;
+    }
+
+    .slide-in {
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(0%); /* Desplazar hacia abajo */
+        transition: opacity 2s ease, transform 1s ease; /* Transición de opacidad y desplazamiento */
+    }
+    
+    .slide-in.active {
+        opacity: 1; /* Se vuelve visible al activar */
+        transform: translateY(0); /* Regresa a la posición original */
     }
 
 }
