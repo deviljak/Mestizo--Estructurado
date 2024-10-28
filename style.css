@@ -268,6 +268,10 @@ a {
 
 .menu-offcanvas {
     position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
     top: 100vh;
     left: 0;
     height: 50vh;
@@ -281,6 +285,53 @@ a {
     position: absolute;
     top: 50vh;
     overflow: hidden;
+}
+
+.cerrar-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    color: var(--color-negro);
+    transition: all 0.3s ease;
+}
+
+.cerrar-boton:hover {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    padding: 1%;
+    border-radius: 150px;
+    gap: 2vw;
+}
+
+.cerrar-boton>p {
+    font-size: 1vw;
+    line-height: 1vw;
+}
+
+
+.cerrar-boton-linea {
+    content: '';
+    display: block;
+    background-color: var(--color-negro);
+    width: 1.5vw;
+    height: 1px;
+    transition: all 0.3s ease;
+}
+
+.cerrar-boton-linea.uno.cerrar-activo {
+    height: 2px;
+    background-color: var(--color-blanco);
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+
+.cerrar-boton-linea.dos.cerrar-activo {
+    height: 2px;
+    background-color: var(--color-blanco);
+    transform: rotate(45deg);
+    transform-origin: center;
+    translate: 0.01vw -0.1vw;
 }
 
 .contenedor-scroll {
@@ -430,6 +481,11 @@ textarea {
 }
 
 
+.social {
+    justify-content: space-between;
+}
+
+
 /*Animaciones*/
 .fade-in {
     opacity: 0; /* Comienza invisible */
@@ -503,7 +559,7 @@ textarea {
     }
 
     .parrafo {
-        width: 50%;
+        width: 100%;
     }
 
     .movil {
@@ -527,9 +583,7 @@ textarea {
             flex-direction: column;
         }
 
-    .cabecera {
-        background: var(--color-blaco-hueso);
-    }
+
 
     .cabecera-menu-boton {
         align-items: center;
