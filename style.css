@@ -103,7 +103,7 @@ a {
     }
 
 .parrafo {
-    width: 25%;
+    width: 50%;
     text-align: justify;
 }
 
@@ -159,6 +159,11 @@ a {
     z-index: 999;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.cabecera.scroll-activo {
+    background: var(--color-blaco-hueso);
 }
 
 .cabecera-logo {
@@ -358,7 +363,6 @@ input:-webkit-autofill {
     font-family: poppins;
     background-color: var(--color-blaco-hueso);
     padding: 1%;
-    cursor: ;
     color: var(--color-negro);
     font-weight: 600;
 }
@@ -404,7 +408,6 @@ textarea {
     border: none;
     color: var(--color-negro);
     transition: all 0.3s ease;
-    cursor: ;
 }
 
 .boton-contacto:hover {
@@ -500,7 +503,7 @@ textarea {
     }
 
     .parrafo {
-        width: 100%;
+        width: 50%;
     }
 
     .movil {
@@ -521,7 +524,7 @@ textarea {
         }
 
         .columna {
-            flex-direction: ;
+            flex-direction: column;
         }
 
     .cabecera {

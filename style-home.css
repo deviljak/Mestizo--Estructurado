@@ -11,7 +11,7 @@
 
 /*SOBRE MI*/
 .sobre-mi {
-    flex-direction: row;
+    flex-direction: rpw;
     align-items: start;
     justify-content: space-between;
     gap: 5vw;
@@ -22,12 +22,9 @@
 
 
 .sobre-mi-flecha {
-    position: absolute; /* Cambia la posición para que sea relativa al contenedor */
     transition: transform 0.3s ease; /* Para suavizar el movimiento */
     transform-origin: top right; /* Cambia el origen de la transformación a la esquina superior derecha */
     margin: 0; /* Sin margen */
-    left: 20%; /* Ajusta la posición horizontal */
-    top: 15%; /* Ajusta la posición vertical según sea necesario */
     transform-origin: center;
 }
 
@@ -40,7 +37,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 75%;
+    width: 100%;
 }
 
 .accordion__item {

@@ -266,4 +266,16 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
 
 
-/**Putero */
+/**fondo stiky */
+
+document.addEventListener('DOMContentLoaded', function() {
+  const cabecera = document.querySelector('.cabecera');
+
+  window.addEventListener('scroll', function() {
+      if (window.scrollY >= 50) {
+          cabecera.classList.add('scroll-activo');
+      } else {
+          cabecera.classList.remove('scroll-activo');
+      }
+  });
+});
