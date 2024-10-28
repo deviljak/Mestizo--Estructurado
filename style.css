@@ -9,6 +9,7 @@ body {
     background-position: 49% ;
     max-width: 100vw;
     touch-action: pan-y; /* Permitir desplazamiento solo vertical en dispositivos táctiles */
+    touch-action: manipulation;
 }
 
 
@@ -145,6 +146,9 @@ a {
 .escritorio {
     display: flex;
 }
+
+/* Estilos para el puntero */
+
 
 /*CABECERA*/
 .cabecera {
@@ -506,7 +510,7 @@ textarea {
     .escritorio {
         display: none;
     }
-
+    
     .contenedor {
         width: 90vw;
     }
@@ -519,6 +523,10 @@ textarea {
         .columna {
             flex-direction: ;
         }
+
+    .cabecera {
+        background: var(--color-blaco-hueso);
+    }
 
     .cabecera-menu-boton {
         align-items: center;

@@ -146,9 +146,14 @@ function Marquee(selector, speed, direction) {
 
       // Función de animación
       function animate() {
+          // Cambia la velocidad si la pantalla es menor a 500px
+          const adjustedSpeed = window.innerWidth < 500 ? speed / 7
+          
+          : speed;
+
           if (direction === 'left') {
               firstElement.style.marginLeft = `-${i}px`;
-              i += speed;
+              i += adjustedSpeed;
 
               // Reiniciar la posición cuando el contenido se ha movido completamente
               if (i >= totalWidth) {
@@ -157,7 +162,7 @@ function Marquee(selector, speed, direction) {
           } else if (direction === 'right') {
               // Para el marquee a la derecha, movemos el primer elemento
               firstElement.style.marginLeft = `${-totalWidth + i}px`;
-              i += speed;
+              i += adjustedSpeed;
 
               // Reiniciar la posición cuando el contenido se ha movido completamente
               if (i >= totalWidth) {
@@ -177,12 +182,6 @@ window.addEventListener('load', function() {
   Marquee('.marquee-left', 4, 'left');  // Ajusta la velocidad aquí
   Marquee('.marquee-right', 4, 'right'); // Ajusta la velocidad aquí
 });
-
-
-
-
-
-
 
 
 
@@ -263,3 +262,8 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       console.error('Error:', error);
   });
 });
+
+
+
+
+/**Putero */
