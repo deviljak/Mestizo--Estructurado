@@ -277,7 +277,7 @@ a {
     left: 0;
     height: 50vh;
     width: 100%;
-    background-color: white;
+    background-color: var(--color-amarillo);
     z-index: 998;
     transition: all 0.3s ease;
 }
@@ -300,10 +300,17 @@ a {
     gap: 2vw;
 }
 
+#social>a:hover {
+    border-radius: 150px;
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    padding: 0 1%;
+}
+
 .cerrar-boton {
     display: flex;
     margin: auto 0;
-    height: 1px;
+    height: auto;
     justify-content: center;
     align-items: center;
     gap: 1vw;
