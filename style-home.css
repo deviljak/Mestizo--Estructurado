@@ -11,7 +11,7 @@
 
 /*SOBRE MI*/
 .sobre-mi {
-    flex-direction: row;
+    flex-direction: rpw;
     align-items: start;
     justify-content: space-between;
     gap: 5vw;
@@ -22,12 +22,9 @@
 
 
 .sobre-mi-flecha {
-    position: absolute; /* Cambia la posición para que sea relativa al contenedor */
     transition: transform 0.3s ease; /* Para suavizar el movimiento */
     transform-origin: top right; /* Cambia el origen de la transformación a la esquina superior derecha */
     margin: 0; /* Sin margen */
-    left: 20%; /* Ajusta la posición horizontal */
-    top: 15%; /* Ajusta la posición vertical según sea necesario */
     transform-origin: center;
 }
 
@@ -36,11 +33,22 @@
     width: 6vw;
 }
 
+.contenedor-servicios {
+    border-left: 2px solid black;
+    padding-left: 1%;
+}
+
+.titulo-servicios {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .accordion {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 75%;
+    width: 100%;
 }
 
 .accordion__item {
@@ -149,12 +157,17 @@ padding: 0 1vw;
     }
 
     .sobre-mi-flecha {
-        top: -10%;
+        position: absolute;
+        top: -15%;
         left: 80%;
     }
 
     .sobre-mi-flecha>img {
         width: 15vw;
+    }
+
+    .contenedor-servicios {
+        padding-left: 5%;
     }
 
     .accordion {
@@ -164,6 +177,7 @@ padding: 0 1vw;
     .accordion-mas, .accordion-mas-girar {
         width: 5vw;
     }
+
 
     .marquee>h1 {
         margin-top: 2px;

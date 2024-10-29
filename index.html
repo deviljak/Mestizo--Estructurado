@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -19,9 +20,39 @@
             <span class="cabecera-menu-boton-linea"></span>
         </div>
     </button>
-    <div id="offcanvas" class="menu-offcanvas">
-        <button id="menu-boton">Cerrar</button> <!-- Botón para cerrar el menú -->
+    <div id="offcanvas" class="menu-offcanvas columna">
+
+        <button id="menu-boton" class="cerrar-boton escritorio">
+            <p>Cerrar</p>
+            <div>
+                <span class="cerrar-boton-linea uno"></span>
+                <span class="cerrar-boton-linea dos"></span>
+            </div>
+        </button> 
+
+        <div class="row">
+                <h2>Inicio</h2>
+                <h2>Sobre Mi</h2>
+                <h2>Servicios</h2>
+                <h2>Portfolio</h2>
+                <h2>Contactame</h2>
+        </div>
+
+        <button id="menu-boton" class="movil cerrar-boton">
+            <p>Cerrar</p>
+            <div>
+                <span class="cerrar-boton-linea uno"></span>
+                <span class="cerrar-boton-linea dos"></span>
+            </div>
+        </button> 
+
+        <section id="social" class="contenedor social fade-in">
+            <a href="#"><p>Instagram</p></a>
+            <a href="#"><p>Whatsapp</p></a>
+            <a href="#"><p>Behance</p></a>
+        </section> 
     </div>
+
 
     <div class="contenedor-scroll">
         <div class="scroll-bar">
@@ -47,44 +78,80 @@
     <!--Espaciador-->
     <samp class="espaciador10"></samp>
 
-    <!--Seccion Sobre Mi/Servicios-->
-    <div class="titulo-separador contenedor fade-in"><h3>Sobre Mi</h3><h3>01</h3></div>
+    <!--Seccion Sobre Mi-->
+  <!--Seccion Sobre Mi/Servicios-->
+  <div class="titulo-separador contenedor fade-in"><h3>Sobre Mi</h3><h3>01</h3></div>
+  <span class="barra-separadora fade-in"></span>
+  <span class="espaciador2"></span>
+  <span class="espaciador10 movil"></span>
+  <section class="contenedor columna slide-in">
+      <div class="sobre-mi contenedor">
+          <span class="espaciador2 movil"></span>
+          <h2>Desarrollador Web</h2>
+          <span class="espaciador5 movil"></span>
+          <figure id="sobre-mi-flecha" class="sobre-mi-flecha"><img class="fade-in" src="/assets/flecha.svg" alt="Flecha"></figure>
+          <p class="parrafo">Mi objetivo es construir tu sitio web de manera que sea funcional y fácil de usar, sin dejar de lado el atractivo visual.</p>
+          <p class="parrafo">Me especializo en desarrollar sitios que equilibran rendimiento, estética y experiencia de usuario para maximizar su impacto y eficiencia.</p>
+      </div>
+      <span class="espaciador5"></span>
+      <div class="sobre-mi contenedor">
+          <p class="parrafo">Como especialista en desarrollo web y tiendas online, me enfoco en construir experiencias digitales innovadoras que conectan con las necesidades de cada cliente. Trabajo mano a mano con empresas y emprendedores para crear sitios web que no solo sean visualmente atractivos, sino también funcionales y efectivos.</p>
+          <span class="espaciador5 movil"></span>
+          <div class="accordion">
+              <div class="accordion__item">
+                  <div class="accordion__header" data-toggle="#faq1">Desarrollo Web<span class="accordion-mas"><span class="accordion-mas-girar"></span></span></div>
+                  <div class="accordion__content" id="faq1">
+                      <p>Diseño y desarrollo de sitios web personalizados, adaptados a las necesidades de tu negocio. Desde páginas institucionales hasta tiendas online, construyo soluciones que combinan funcionalidad, velocidad y diseño atractivo, optimizadas para todos los dispositivos.</p>
+                  </div>
+              </div>
+
+              <div class="accordion__item">
+                  <div class="accordion__header" data-toggle="#faq2">Diseño Gráfico<span class="accordion-mas"><span class="accordion-mas-girar"></span></span></div>
+                  <div class="accordion__content" id="faq2">
+                      <p>Creación de gráficos y banners personalizados para tu sitio web. Ya sea que necesites imágenes de alta calidad para destacar tus productos o diseños gráficos únicos que reflejen la identidad de tu marca, puedo ayudarte a captar la atención de tus usuarios.</p>
+                  </div>
+              </div>
+
+              <div class="accordion__item">
+                  <div class="accordion__header" data-toggle="#faq3">Mantenimiento Web<span class="accordion-mas"><span class="accordion-mas-girar"></span></span></div>
+                  <div class="accordion__content" id="faq3">
+                      <p>Soporte continuo para el óptimo funcionamiento de tu sitio web. Ofrezco actualizaciones de seguridad, corrección de errores y mejoras para garantizar que tu web esté siempre operativa y actualizada. También gestiono el contenido para mantener todo al día y optimizado.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <!--Espaciador-->
+    <samp class="espaciador10"></samp>
+    <samp class="espaciador10 movil"></samp>
+
+    <!--Seccion Servicios-->
+    <div class="titulo-separador contenedor fade-in"><h3>Servicios</h3><h3>02</h3></div>
     <span class="barra-separadora fade-in"></span>
     <span class="espaciador2"></span>
     <span class="espaciador10 movil"></span>
     <section class="contenedor columna slide-in">
-        <div class="sobre-mi contenedor">
-            <span class="espaciador2 movil"></span>
-            <h2>Desarrollador Web</h2>
-            <span class="espaciador2 movil"></span>
-            <figure id="sobre-mi-flecha" class="sobre-mi-flecha"><img class="fade-in" src="/assets/flecha.svg" alt="Flecha"></figure>
-            <p class="parrafo">Mi objetivo es construir tu sitio web de manera que sea funcional y fácil de usar, sin dejar de lado el atractivo visual.</p>
-            <p class="parrafo">Me especializo en desarrollar sitios que equilibran rendimiento, estética y experiencia de usuario para maximizar su impacto y eficiencia.</p>
-        </div>
-        <span class="espaciador5"></span>
-        <div class="sobre-mi contenedor">
-            <p class="parrafo">Como especialista en desarrollo web y tiendas online, me enfoco en construir experiencias digitales innovadoras que conectan con las necesidades de cada cliente. Trabajo mano a mano con empresas y emprendedores para crear sitios web que no solo sean visualmente atractivos, sino también funcionales y efectivos.</p>
-            <span class="espaciador5 movil"></span>
+        <h2>Servicios</h2>
+        <div class="columna contenedor">
+            <span class="espaciador2"></span>
             <div class="accordion">
-                <div class="accordion__item">
-                    <div class="accordion__header" data-toggle="#faq1">Desarrollo Web<span class="accordion-mas"><span class="accordion-mas-girar"></span></span></div>
-                    <div class="accordion__content" id="faq1">
-                        <p>Diseño y desarrollo de sitios web personalizados, adaptados a las necesidades de tu negocio. Desde páginas institucionales hasta tiendas online, construyo soluciones que combinan funcionalidad, velocidad y diseño atractivo, optimizadas para todos los dispositivos.</p>
-                    </div>
+                <div class="contenedor-servicios">
+                    <div class="titulo-servicios"><h3>Desarrollo Web</h3><span class="material-symbols-outlined">code</span></div>
+                    <span class="espaciador2 movil"></span>
+                    <p>Diseño y desarrollo de sitios web personalizados, adaptados a las necesidades de tu negocio. Desde páginas institucionales hasta tiendas online, construyo soluciones que combinan funcionalidad, velocidad y diseño atractivo, optimizadas para todos los dispositivos.</p>
                 </div>
-
-                <div class="accordion__item">
-                    <div class="accordion__header" data-toggle="#faq2">Diseño Gráfico<span class="accordion-mas"><span class="accordion-mas-girar"></span></span></div>
-                    <div class="accordion__content" id="faq2">
-                        <p>Creación de gráficos y banners personalizados para tu sitio web. Ya sea que necesites imágenes de alta calidad para destacar tus productos o diseños gráficos únicos que reflejen la identidad de tu marca, puedo ayudarte a captar la atención de tus usuarios.</p>
-                    </div>
+                <span class="espaciador2"></span>
+                <div class="contenedor-servicios">
+                    <div class="titulo-servicios"><h3>Diseño Gráfico</h3><span class="material-symbols-outlined">brush</span></div>
+                    <span class="espaciador2 movil"></span>
+                    <p>Creación de gráficos y banners personalizados para tu sitio web. Ya sea que necesites imágenes de alta calidad para destacar tus productos o diseños gráficos únicos que reflejen la identidad de tu marca, puedo ayudarte a captar la atención de tus usuarios.</p>
                 </div>
-
-                <div class="accordion__item">
-                    <div class="accordion__header" data-toggle="#faq3">Mantenimiento Web<span class="accordion-mas"><span class="accordion-mas-girar"></span></span></div>
-                    <div class="accordion__content" id="faq3">
-                        <p>Soporte continuo para el óptimo funcionamiento de tu sitio web. Ofrezco actualizaciones de seguridad, corrección de errores y mejoras para garantizar que tu web esté siempre operativa y actualizada. También gestiono el contenido para mantener todo al día y optimizado.</p>
-                    </div>
+                <span class="espaciador2"></span>
+                <div class="contenedor-servicios">
+                    <div class="titulo-servicios"><h3>Mantenimiento</h3><span class="material-symbols-outlined">reset_wrench</span></div>
+                    <span class="espaciador2 movil"></span>
+                    <p>Soporte continuo para el óptimo funcionamiento de tu sitio web. Ofrezco actualizaciones de seguridad, corrección de errores y mejoras para garantizar que tu web esté siempre operativa y actualizada. También gestiono el contenido para mantener todo al día y optimizado.</p>
                 </div>
             </div>
         </div>
@@ -130,7 +197,6 @@
 
 
     <!--Seccion Portfolio-->
-
     <section class="contenedor row fade-in">
         <h2>Portfolio<br class="escritorio">- Mis trabajos</h2>
         <span class="espaciador2 movil"></span>
@@ -139,7 +205,7 @@
     </section>
     <span class="espaciador2"></span>
     <span class="espaciador2 movil"></span>
-    <div class="titulo-separador contenedor fade-in"><h3>Mis trabajos</h3><h3>02</h3></div>
+    <div class="titulo-separador contenedor fade-in"><h3>Mis trabajos</h3><h3>03</h3></div>
     <span class="barra-separadora fade-in"></span>
     <span class="espaciador2 movil"></span>
     <span class="espaciador2"></span>
