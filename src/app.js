@@ -8,7 +8,7 @@ if (mediaQuery.matches) {
     let menu = document.getElementById('menu-icono');
     menu.classList.add('menu-icono-activo');
   });
-  
+
   botonMenu.addEventListener('mouseout', function() {
     let menu = document.getElementById('menu-icono');
     menu.classList.remove('menu-icono-activo');
@@ -29,7 +29,7 @@ if (mediaQuery.matches) {
     let menu = document.getElementById('menu-icono');
     menu.classList.add('menu-icono-activo');
   });
-  
+
   botonMenu.addEventListener('mouseout', function() {
     let menu = document.getElementById('menu-icono');
     menu.classList.remove('menu-icono-activo');
@@ -51,7 +51,7 @@ if (mediaQuery.matches) {
     let menu = document.querySelector('.cerrar-boton-linea');
     menu.classList.add('cerrar-activo');
   });
-  
+
   botonMenu.addEventListener('mouseout', function() {
     let menu = document.querySelector('.cerrar-boton-linea');
     menu.classList.remove('cerrar-activo');
@@ -74,7 +74,7 @@ if (mediaQuery.matches) {
       menu.classList.add('cerrar-activo');
     });
   });
-  
+
   botonMenu.addEventListener('mouseout', function() {
     let menuItems = document.querySelectorAll('.cerrar-boton-linea');
     menuItems.forEach(function(menu) {
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   content.style.maxHeight = '';
                   content.previousElementSibling.classList.remove('active'); // Elimina la clase active del header
               });
-              
+
               // Expandir el bloque actual
               block.style.maxHeight = block.scrollHeight + 'px';
           } else {
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('scroll', () => {
     const arrow = document.querySelector('.sobre-mi-flecha');
-    
+
     // Obtener la posición de desplazamiento actual
     const scrollY = window.scrollY;
 
@@ -217,7 +217,7 @@ function Marquee(selector, speed, direction) {
       function animate() {
           // Cambia la velocidad si la pantalla es menor a 500px
           const adjustedSpeed = window.innerWidth < 500 ? speed / 7
-          
+
           : speed;
 
           if (direction === 'left') {
@@ -284,10 +284,10 @@ window.addEventListener('scroll', myFunction);
 
 
 
+/** Formulario de contacto */        
 document.getElementById('contactForm').addEventListener('submit', function(event) {
   event.preventDefault();
-  
-  // Obtén los valores del formulario
+
   const nombre = document.querySelector('input[name="nombre"]').value;
   const telefono = document.querySelector('input[name="telefono"]').value;
   const asunto = document.querySelector('input[name="asunto"]').value;
@@ -301,15 +301,17 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   })
   .then(response => response.json())
   .then(result => {
-    document.getElementById('resultado').innerHTML = '<p>Correo enviado exitosamente.</p>';
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<p>${result.message}</p>`;
+    resultado.classList.add('show');
   })
   .catch(error => {
-    document.getElementById('resultado').innerHTML = '<p>Error al enviar el correo.</p>';
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = '<p>Error al enviar el correo.</p>';
+    resultado.classList.add('show');
     console.error('Error:', error);
   });
 });
-
-
 
 
 /**Putero */
