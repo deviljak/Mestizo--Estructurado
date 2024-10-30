@@ -284,53 +284,7 @@ window.addEventListener('scroll', myFunction);
 
 
 
-/** Formulario de contacto*/        
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Evita que el formulario se envíe de la forma tradicional
-
-  // Obtén los valores del formulario
-  var nombre = document.querySelector('input[name="nombre"]').value;
-  var telefono = document.querySelector('input[name="telefono"]').value;
-  var asunto = document.querySelector('input[name="asunto"]').value;
-  var correo = document.querySelector('input[name="correo"]').value;
-  var mensaje = document.querySelector('textarea[name="mensaje"]').value;
-
-  // Datos a enviar a Brevo
-  var data = {
-      sender: { email: "gaston@mestizodiseno.com.ar" }, // Tu correo verificado
-      to: [{ email: "gaston.ros.96@gmail.com" }], // El correo al que llegará el mensaje
-      replyTo: { email: correo }, // Correo del usuario para las respuestas
-      subject: `${asunto}`,
-      htmlContent: `<p><strong>Nombre:</strong> ${nombre}</p>
-                    <p><strong>Teléfono:</strong> ${telefono}</p>
-                    <p><strong>Correo:</strong> ${correo}</p>
-                    <p><strong>Mensaje:</strong><br>${mensaje}</p>`
-  };
-
-  // Realizar el envío usando Fetch y la API de Brevo
-  fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json",
-          "api-key": "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" // Reemplaza con tu clave API de Brevo
-      },
-      body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(result => {
-      // Mostrar un mensaje de éxito
-      const resultado = document.getElementById('resultado');
-      resultado.innerHTML = '<p>Correo enviado exitosamente.</p>';
-      resultado.classList.add('show');
-  })
-  .catch(error => {
-      // Mostrar un mensaje de error
-      const resultado = document.getElementById('resultado');
-      resultado.innerHTML = '<p>Error al enviar el correo.</p>';
-      resultado.classList.add('show');
-      console.error('Error:', error);
-  });
-});
-
+/** Formulario de contacto        
 
 /**Putero */
+
