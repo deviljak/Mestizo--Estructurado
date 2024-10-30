@@ -285,32 +285,56 @@ window.addEventListener('scroll', myFunction);
 
 
 /** Formulario de contacto */        
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault();
+const express = require('express');
+const fetch = require('node-fetch');
+const dotenv = require('dotenv');
 
-  const nombre = document.querySelector('input[name="nombre"]').value;
-  const telefono = document.querySelector('input[name="telefono"]').value;
-  const asunto = document.querySelector('input[name="asunto"]').value;
-  const correo = document.querySelector('input[name="correo"]').value;
-  const mensaje = document.querySelector('textarea[name="mensaje"]').value;
+// Cargar las variables de entorno desde el archivo .env
+dotenv.config();
 
-  fetch("http://localhost:3000/send-email", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ nombre, telefono, asunto, correo, mensaje })
-  })
-  .then(response => response.json())
-  .then(result => {
-    const resultado = document.getElementById('resultado');
-    resultado.innerHTML = `<p>${result.message}</p>`;
-    resultado.classList.add('show');
-  })
-  .catch(error => {
-    const resultado = document.getElementById('resultado');
-    resultado.innerHTML = '<p>Error al enviar el correo.</p>';
-    resultado.classList.add('show');
+const app = express();
+app.use(express.json());
+
+// Ruta para manejar el envío del formulario
+app.post('/send-email', async (req, res) => {
+  const { nombre, telefono, asunto, correo, mensaje } = req.body;
+
+  // Datos para enviar a Brevo
+  const data = {
+    sender: { email: "servicios@mestizodiseno.com.ar" },
+    to: [{ email: "hola@mestizodiseno.com.ar" }],
+    replyTo: { email: correo },
+    subject: asunto,
+    htmlContent: `<p><strong>Nombre:</strong> ${nombre}</p>
+                  <p><strong>Teléfono:</strong> ${telefono}</p>
+                  <p><strong>Correo:</strong> ${correo}</p>
+                  <p><strong>Mensaje:</strong><br>${mensaje}</p>`
+  };
+
+  try {
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": process.env.BREVO_API_KEY, // Usando la clave desde el archivo .env
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      res.status(200).json({ message: 'Correo enviado exitosamente.' });
+    } else {
+      res.status(response.status).json({ message: 'Error al enviar el correo.' });
+    }
+  } catch (error) {
     console.error('Error:', error);
-  });
+    res.status(500).json({ message: 'Error al enviar el correo.' });
+  }
+});
+
+// Iniciar el servidor
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Servidor funcionando');
 });
 
 
