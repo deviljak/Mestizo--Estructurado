@@ -19,6 +19,74 @@ if (mediaQuery.matches) {
   // Si el ancho de la pantalla es mayor a 500px
 };
 
+/** Animacion boton de menu*/
+var botonMenu = document.getElementById('menu-boton');
+var mediaQuery = window.matchMedia('(min-width: 500px)');
+
+if (mediaQuery.matches) {
+  // Aquí puedes aplicar las clases o lógica que quieras para el menú móvil
+  botonMenu.addEventListener('mouseover', function() {
+    let menu = document.getElementById('menu-icono');
+    menu.classList.add('menu-icono-activo');
+  });
+  
+  botonMenu.addEventListener('mouseout', function() {
+    let menu = document.getElementById('menu-icono');
+    menu.classList.remove('menu-icono-activo');
+  });
+
+
+} else {
+  // Si el ancho de la pantalla es mayor a 500px
+};
+
+
+/** Animación botón de cerrar */
+var botonMenu = document.querySelector('.cerrar-boton');
+var mediaQuery = window.matchMedia('(min-width: 500px)');
+
+if (mediaQuery.matches) {
+  // Aquí puedes aplicar las clases o lógica que quieras para el menú móvil
+  botonMenu.addEventListener('mouseover', function() {
+    let menu = document.querySelector('.cerrar-boton-linea');
+    menu.classList.add('cerrar-activo');
+  });
+  
+  botonMenu.addEventListener('mouseout', function() {
+    let menu = document.querySelector('.cerrar-boton-linea');
+    menu.classList.remove('cerrar-activo');
+  });
+
+} else {
+  // Si el ancho de la pantalla es mayor a 500px
+};
+
+
+/** Animación botón de cerrar */
+var botonMenu = document.querySelector('.cerrar-boton');
+var mediaQuery = window.matchMedia('(min-width: 500px)');
+
+if (mediaQuery.matches) {
+  // Aquí puedes aplicar las clases o lógica que quieras para el menú móvil
+  botonMenu.addEventListener('mouseover', function() {
+    let menuItems = document.querySelectorAll('.cerrar-boton-linea');
+    menuItems.forEach(function(menu) {
+      menu.classList.add('cerrar-activo');
+    });
+  });
+  
+  botonMenu.addEventListener('mouseout', function() {
+    let menuItems = document.querySelectorAll('.cerrar-boton-linea');
+    menuItems.forEach(function(menu) {
+      menu.classList.remove('cerrar-activo');
+    });
+  });
+
+} else {
+  // Si el ancho de la pantalla es mayor a 500px
+};
+
+
 
 /** Toogle menu*/
 var botonesMenuoffcanvas = document.querySelectorAll('[id^="menu-boton"]'); 
@@ -40,6 +108,7 @@ botonesMenuoffcanvas.forEach(function(boton) {
     barra.classList.toggle('menu-icono-animacion-activo');
   });
 });
+
 
 /**ACORDION */
 document.addEventListener('DOMContentLoaded', () => {

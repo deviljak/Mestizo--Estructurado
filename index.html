@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-home.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"rel="stylesheet">
-    <title>Document</title>
+    <title>Mestizo: Creación de Experiencias Web Únicas</title>
+    <meta name="description" content="En Mestizo, somos especialistas en diseño web en Argentina. Ofrecemos creación de sitios atractivos, diseño gráfico (banners y más) y mantenimiento para optimizar tu presencia online.">
 </head>
 <body>
 <!-- Encabezado de la página -->
@@ -31,11 +32,11 @@
         </button> 
 
         <div class="row">
-                <h2>Inicio</h2>
-                <h2>Sobre Mi</h2>
-                <h2>Servicios</h2>
-                <h2>Portfolio</h2>
-                <h2>Contactame</h2>
+                <a class="nav" href="#hero"><h2>Inicio</h2></a>
+                <a class="nav" href="#sobre-mi"><h2>Sobre Mi</h2></a>
+                <a class="nav" href="#servicios"><h2>Servicios</h2></a>
+                <a class="nav" href="#portfolio"><h2>Portfolio</h2></a>
+                <a class="nav" href="#contactame"><h2>Contactame</h2></a>
         </div>
 
         <button id="menu-boton" class="movil cerrar-boton">
@@ -67,7 +68,7 @@
 <main>
 
     <!--Seccion Hero-->
-    <section class="hero contenedor">
+    <section id="hero" class="hero contenedor">
         <span class="espaciador10 movil"></span>
         <span class="espaciador10"></span>
         <h1 class="fade-in">Hola, soy desarrollador web y creo experiencias digitales únicas.</h1>
@@ -76,11 +77,11 @@
     </section>
 
     <!--Espaciador-->
-    <samp class="espaciador10"></samp>
+    <span id="sobre-mi" class="espaciador10"></span>
 
     <!--Seccion Sobre Mi-->
-  <!--Seccion Sobre Mi/Servicios-->
-  <div class="titulo-separador contenedor fade-in"><h3>Sobre Mi</h3><h3>01</h3></div>
+  <!--Seccion Sobre Mi-->
+  <div  class="titulo-separador contenedor fade-in"><h3>Sobre Mi</h3><h3>01</h3></div>
   <span class="barra-separadora fade-in"></span>
   <span class="espaciador2"></span>
   <span class="espaciador10 movil"></span>
@@ -123,8 +124,8 @@
   </section>
 
     <!--Espaciador-->
-    <samp class="espaciador10"></samp>
-    <samp class="espaciador10 movil"></samp>
+    <span id="servicios" class="espaciador10"></span>
+    <span class="espaciador10 movil"></span>
 
     <!--Seccion Servicios-->
     <div class="titulo-separador contenedor fade-in"><h3>Servicios</h3><h3>02</h3></div>
@@ -192,7 +193,7 @@
     </section>
 
     <!--Espaciador-->
-    <samp class="espaciador10"></samp>
+    <samp id="portfolio" class="espaciador10"></samp>
     <samp class="espaciador10 movil"></samp>
 
 
@@ -268,15 +269,15 @@
         <span class="espaciador2"></span>
         <span class="espaciador2 movil"></span>
         <section class="contenedor social fade-in" >
-            <a href="#"><p>Instagram</p></a>
-            <a href="#"><p>Whatsapp</p></a>
-            <a href="#"><p>Behance</p></a>
+            <a class="red" href="#"><p>Instagram</p></a>
+            <a class="red" href="#"><p>Whatsapp</p></a>
+            <a class="red" href="#"><p>Behance</p></a>
         </section>
         <span class="espaciador2 movil"></span>
         <span class="espaciador2"></span>
         <p class="fade-in">&copy; 2024 MESTIZO DISEÑO. Todos los derechos reservador.</p>
     </section>
-    <span class="espaciador2"></span>
+    <span id="contactame" class="espaciador2"></span>
 </footer>
 
 <script src="app.js"></script>

@@ -78,11 +78,15 @@ a {
     transition: all 0.3s ease;
 }
 
-    a:hover {
+    .red:hover {
         border-radius: 150px;
         background-color: #ffe500;
         color: var(--color-negro);
         padding: 0 1%;
+    }
+
+    .nav:hover {
+        color: var(--color-blanco);
     }
 
 /*CLASES ESTANDARES*/
