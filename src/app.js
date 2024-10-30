@@ -280,20 +280,26 @@ function myFunction() {
 // Añadir el evento de scroll
 window.addEventListener('scroll', myFunction);
 
+
+
+
+
+
 /**Modal formulario */
 
 document.getElementById("contactForm").addEventListener("submit", function(event) {
   event.preventDefault();
+
   const formData = new FormData(this);
 
-  fetch("enviar_email.php", {
+  fetch("/src/procesar_formulario.php", {
       method: "POST",
       body: formData
   })
-  .then(response => response.json())
+  .then(response => response.text())
   .then(data => {
       // Mostrar el mensaje en el modal
-      document.getElementById("modalMessage").textContent = data.message;
+      document.getElementById("modalMessage").textContent = data;
       document.getElementById("confirmationModal").style.display = "block";
   })
   .catch(error => {
@@ -315,3 +321,4 @@ window.onclick = function(event) {
       modal.style.display = "none";
   }
 };
+
