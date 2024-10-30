@@ -280,4 +280,38 @@ function myFunction() {
 // Añadir el evento de scroll
 window.addEventListener('scroll', myFunction);
 
-/**Putero */
+/**Modal formulario */
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  const formData = new FormData(this);
+
+  fetch("enviar_email.php", {
+      method: "POST",
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      // Mostrar el mensaje en el modal
+      document.getElementById("modalMessage").textContent = data.message;
+      document.getElementById("confirmationModal").style.display = "block";
+  })
+  .catch(error => {
+      document.getElementById("modalMessage").textContent = "Ocurrió un error al enviar el mensaje.";
+      document.getElementById("confirmationModal").style.display = "block";
+      console.error("Error:", error);
+  });
+});
+
+// Cerrar el modal al hacer clic en la "X"
+document.getElementById("closeModal").addEventListener("click", function() {
+  document.getElementById("confirmationModal").style.display = "none";
+});
+
+// Cerrar el modal al hacer clic fuera de la ventana modal
+window.onclick = function(event) {
+  const modal = document.getElementById("confirmationModal");
+  if (event.target === modal) {
+      modal.style.display = "none";
+  }
+};

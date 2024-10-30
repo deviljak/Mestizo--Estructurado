@@ -248,7 +248,7 @@
             <span class="espaciador2 movil"></span>
             <div class="contenedor contactame row">
                 <h2>Hablemos</h2>
-                <form action="/src/procesar_formulario.php" id="contactForm">
+                <form action="/src/procesar_formulario.php" id="contactForm" method="POST">
                     <div class="contactame-div">
                         <input class="entradas" type="text" name="nombre" placeholder="Nombre" required>
                         <input class="entradas" type="tel" name="telefono" placeholder="Teléfono" required>
@@ -263,6 +263,16 @@
                         <div id="resultado"></div>
                     </div>
                 </form>
+
+                <!-- Modal de confirmación -->
+                <div id="confirmationModal" class="modal">
+                    <div class="modal-content">
+                        <span id="closeModal" class="close">&times;</span>
+                        <p id="modalMessage"></p>
+                    </div>
+                </div>
+
+
             </div>
         </div>
         <span class="espaciador2"></span>
