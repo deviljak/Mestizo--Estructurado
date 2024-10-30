@@ -11,7 +11,7 @@
 
 /*SOBRE MI*/
 .sobre-mi {
-    flex-direction: rpw;
+    flex-direction: row;
     align-items: start;
     justify-content: space-between;
     gap: 5vw;

@@ -51,10 +51,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Manejo de la respuesta
     if ($error) {
         echo "Error al enviar el mensaje: " . $error;
+        exit; // Asegúrate de salir aquí para que no haga la redirección
     } else {
-        // Mostrar la respuesta de la API para depuración
-        echo "¡Mensaje enviado exitosamente! Respuesta de Brevo: " . $response;
+        // Mensaje exitoso
+        echo "¡Mensaje enviado exitosamente!";
     }
+
+    // Redirigir a la página de inicio después de enviar
+    header("Location: /#contactame"); // Cambia esto por la ruta que desees
+    exit; // Asegúrate de hacer un exit después de redirigir
 } else {
     echo "El formulario no se envió correctamente.";
 }
