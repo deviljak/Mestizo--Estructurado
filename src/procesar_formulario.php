@@ -1,17 +1,27 @@
 <?php
+// Habilitar errores para depuración
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtener datos del formulario
-    $nombre = $_POST['nombre'];
-    $telefono = $_POST['telefono'];
-    $asunto = $_POST['asunto'];
-    $correo = $_POST['correo'];
-    $mensaje = $_POST['mensaje'];
+    $nombre = $_POST['nombre'] ?? '';
+    $telefono = $_POST['telefono'] ?? '';
+    $asunto = $_POST['asunto'] ?? '';
+    $correo = $_POST['correo'] ?? '';
+    $mensaje = $_POST['mensaje'] ?? '';
+
+    // Verificar que los campos no estén vacíos
+    if (empty($nombre) || empty($telefono) || empty($asunto) || empty($correo) || empty($mensaje)) {
+        echo json_encode(["status" => "error", "message" => "Por favor, completa todos los campos."]);
+        exit;
+    }
 
     // Configurar los datos para la solicitud de Brevo
     $data = [
-        "sender" => ["name" => $nombre, "email" => $correo],
+        "sender" => ["name" => $nombre, "email" => "web@mestizodiseno.com.ar"], // Email del remitente
         "to" => [
-            ["email" => "destinatario@example.com", "name" => "Destinatario"] // Cambia por el destinatario real
+            ["email" => "hola@mestizodiseno.com.ar", "name" => "Destinatario"]
         ],
         "subject" => $asunto,
         "htmlContent" => "<html><body>
@@ -28,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
         "Content-Type: application/json",
-        "api-key: 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" // Reemplaza con tu clave API de Brevo
+        "api-key: xkeysib-dc0437a557f900532f741f275bf04af41e42b14f6eba5ab0bd98835d88125691"
     ]);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
@@ -38,11 +48,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $error = curl_error($ch);
     curl_close($ch);
 
+    // Manejo de la respuesta
     if ($error) {
-        echo "Error al enviar el mensaje: " . $error;
+        echo json_encode(["status" => "error", "message" => "Error al enviar el mensaje: " . $error]);
     } else {
-        echo "¡Mensaje enviado exitosamente!";
+        echo json_encode(["status" => "success", "message" => "¡Mensaje enviado exitosamente!"]);
     }
 } else {
-    echo "El formulario no se envió correctamente.";
+    echo json_encode(["status" => "error", "message" => "El formulario no se envió correctamente."]);
 }
+?>

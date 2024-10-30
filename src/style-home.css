@@ -19,8 +19,6 @@
     padding: 0;
 }
 
-
-
 .sobre-mi-flecha {
     transition: transform 0.3s ease; /* Para suavizar el movimiento */
     transform-origin: top right; /* Cambia el origen de la transformación a la esquina superior derecha */
