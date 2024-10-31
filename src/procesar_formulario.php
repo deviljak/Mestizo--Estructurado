@@ -2,27 +2,25 @@
 // Habilitar errores para depuración
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+session_start(); // Iniciar la sesión para almacenar el mensaje de estado
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Obtener datos del formulario
     $nombre = $_POST['nombre'] ?? '';
     $telefono = $_POST['telefono'] ?? '';
     $asunto = $_POST['asunto'] ?? '';
     $correo = $_POST['correo'] ?? '';
     $mensaje = $_POST['mensaje'] ?? '';
 
-    // Verificar que los campos no estén vacíos
     if (empty($nombre) || empty($telefono) || empty($asunto) || empty($correo) || empty($mensaje)) {
-        echo "Por favor, completa todos los campos.";
+        // Redirigir a la página de error si hay campos vacíos
+        header("Location: /error.php");
         exit;
     }
 
-    // Configurar los datos para la solicitud de Brevo
+    // Configurar y enviar los datos a la API de Brevo
     $data = [
         "sender" => ["name" => $nombre, "email" => "web@mestizodiseno.com.ar"],
-        "to" => [
-            ["email" => "hola@mestizodiseno.com.ar", "name" => "Destinatario"] // Cambia por el destinatario real
-        ],
+        "to" => [["email" => "hola@mestizodiseno.com.ar", "name" => "Destinatario"]],
         "subject" => $asunto,
         "htmlContent" => "<html><body>
                             <h2>Nuevo mensaje de contacto</h2>
@@ -33,34 +31,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                           </body></html>"
     ];
 
-    // Configurar cURL para enviar la solicitud a la API de Brevo
     $ch = curl_init("https://api.brevo.com/v3/smtp/email");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
         "Content-Type: application/json",
-        "api-key: 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" // Reemplaza con tu clave API de Brevo
+        "api-key: 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"
     ]);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 
-    // Ejecutar la solicitud
     $response = curl_exec($ch);
     $error = curl_error($ch);
     curl_close($ch);
 
-    // Manejo de la respuesta
     if ($error) {
-        echo "Error al enviar el mensaje: " . $error;
-        exit; // Asegúrate de salir aquí para que no haga la redirección
+        // Redirigir a la página de error si ocurre un error
+        header("Location: /error.html");
     } else {
-        // Mensaje exitoso
-        echo "¡Mensaje enviado exitosamente!";
+        // Redirigir a la página de éxito si se envía correctamente
+        header("Location: /exito.html");
     }
-
-    // Redirigir a la página de inicio después de enviar
-    header("Location: /#contactame"); // Cambia esto por la ruta que desees
-    exit; // Asegúrate de hacer un exit después de redirigir
-} else {
-    echo "El formulario no se envió correctamente.";
+    exit;
 }
 ?>
