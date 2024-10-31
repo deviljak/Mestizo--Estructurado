@@ -12,6 +12,9 @@ body {
     touch-action: manipulation;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 *, body {
     padding: 0;

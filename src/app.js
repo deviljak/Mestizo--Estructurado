@@ -281,10 +281,44 @@ function myFunction() {
 window.addEventListener('scroll', myFunction);
 
 
+/**fondo stiky */
+
+document.addEventListener('DOMContentLoaded', function() {
+  const cabecera = document.querySelector('.cabecera');
+
+  window.addEventListener('scroll', function() {
+      if (window.scrollY >= 50) {
+          cabecera.classList.add('scroll-activo');
+      } else {
+          cabecera.classList.remove('scroll-activo');
+      }
+  });
+});
 
 
 
 
+/**Scroll link */
+document.addEventListener('DOMContentLoaded', function () {
+  // Selecciona todos los enlaces que llevan a una sección
+  const scrollLinks = document.querySelectorAll('.scroll-link');
 
+  // Función para limpiar el hash de la URL
+  function clearHash() {
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+  }
 
+  // Escuchar el evento click en los enlaces
+  scrollLinks.forEach(link => {
+      link.addEventListener('click', function () {
+          // Cambia la URL eliminando el hash inmediatamente
+          clearHash();
+      });
+  });
 
+  // Escuchar el evento scroll en la ventana
+  window.addEventListener('scroll', function () {
+      // Cambia la URL eliminando el hash si hay un desplazamiento
+      clearHash();
+  });
+});
