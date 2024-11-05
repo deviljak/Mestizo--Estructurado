@@ -141,6 +141,7 @@ padding: 0 1vw;
 
 .imagen-portfolio {
     width: 100%;
+    height: auto;
 }
 
 /*Medias query*/
@@ -162,6 +163,7 @@ padding: 0 1vw;
 
     .sobre-mi-flecha>img {
         width: 15vw;
+        height: auto;
     }
 
     .contenedor-servicios {

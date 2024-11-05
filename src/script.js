@@ -298,27 +298,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 /**Scroll link */
 document.addEventListener('DOMContentLoaded', function () {
-  // Selecciona todos los enlaces que llevan a una sección
-  const scrollLinks = document.querySelectorAll('.scroll-link');
+    console.log("DOM completamente cargado.");
 
-  // Función para limpiar el hash de la URL
-  function clearHash() {
-      history.pushState("", document.title, window.location.pathname + window.location.search);
-  }
+    const scrollLinks = document.querySelectorAll('.scroll-link');
 
-  // Escuchar el evento click en los enlaces
-  scrollLinks.forEach(link => {
-      link.addEventListener('click', function () {
-          // Cambia la URL eliminando el hash inmediatamente
-          clearHash();
-      });
-  });
+    function clearHash() {
+        console.log("Limpieza de hash.");
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
 
-  // Escuchar el evento scroll en la ventana
-  window.addEventListener('scroll', function () {
-      // Cambia la URL eliminando el hash si hay un desplazamiento
-      clearHash();
-  });
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            console.log("Enlace clickeado.");
+            clearHash();
+        });
+    });
+
+    window.addEventListener('scroll', function () {
+        console.log("Se está haciendo scroll.");
+        clearHash();
+    });
 });
+
